@@ -20,8 +20,8 @@ public:
     std::string getName();
     std::string getNumber();
     Address* getAddress();
-    std::string toJSONmin(const int id);
-    std::string toJSON(const int id);
+    std::string toJSONmin(int id);
+    std::string toJSON(int id);
 
 private:
     std::string firstName;
