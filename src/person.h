@@ -7,11 +7,27 @@
 #ifndef PERSON_H
 #define PERSON_H
 
+#include <string>
+#include "address.h"
+
 class Person {
 
 public:
+    Person(std::string f, std::string l, std::string n, Address* a);
+
+    std::string getFirstName();
+    std::string getLastName();
+    std::string getName();
+    std::string getNumber();
+    Address* getAddress();
+    std::string toJSONmin(const int id);
+    std::string toJSON(const int id);
 
 private:
+    std::string firstName;
+    std::string lastName;
+    std::string phoneNumber;
+    Address* address;
 
 };
 
