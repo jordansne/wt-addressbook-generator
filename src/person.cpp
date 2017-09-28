@@ -12,12 +12,10 @@ using namespace std;
 
 /**
  * Person constructor.
- *
- * Parameters:
- *   f - string:   First name of the Person.
- *   l - string:   Last name of the person.
- *   n - string:   First name of the person.
- *   a - Address*: Address object of the person.
+ *   Params: f - string:   First name of the Person.
+ *           l - string:   Last name of the person.
+ *           n - string:   First name of the person.
+ *           a - Address*: Address object of the person.
  */
 Person::Person(string f, string l, string n, Address* a) {
     firstName = f;
@@ -28,8 +26,7 @@ Person::Person(string f, string l, string n, Address* a) {
 
 /**
  * Get the first name.
- *
- * Returns - string: The person's first name.
+ *   Return - string: The person's first name.
  */
 string Person::getFirstName() {
     return firstName;
@@ -37,8 +34,7 @@ string Person::getFirstName() {
 
 /**
  * Get the last name.
- *
- * Returns - string: The person's last name.
+ *   Return - string: The person's last name.
  */
 string Person::getLastName() {
     return lastName;
@@ -46,8 +42,7 @@ string Person::getLastName() {
 
 /**
  * Get the full name.
- *
- * Returns - string: The person's first and last name.
+ *   Return - string: The person's first and last name.
  */
 string Person::getName() {
     return firstName + " " + lastName;
@@ -55,8 +50,7 @@ string Person::getName() {
 
 /**
  * Get the phone number.
- *
- * Returns - string: The person's phone number.
+ *   Return - string: The person's phone number.
  */
 string Person::getNumber() {
     return phoneNumber;
@@ -64,8 +58,7 @@ string Person::getNumber() {
 
 /**
  * Get the address.
- *
- * Returns - string: The person's first name.
+ *   Return - string: The person's first name.
  */
 Address* Person::getAddress() {
     return address;
@@ -73,10 +66,8 @@ Address* Person::getAddress() {
 
 /**
  * Returns a minimal JSON string representation of the object (only first and last name).
- *
- * Parameters:
- *   id - int: The ID number to be part of the JSON object.
- * Returns: string: JSON representation of the object.
+ *   Params: id - int: The ID number to be part of the JSON object.
+ *   Return - string:  JSON representation of the object.
  */
 string Person::toJSONmin(const int id) {
     string json = "";
@@ -90,10 +81,8 @@ string Person::toJSONmin(const int id) {
 
 /**
  * Returns a full JSON string representation of the object.
- *
- * Parameters:
- *   id - int: The ID number to be part of the JSON object.
- * Returns: string: JSON representation of the object.
+ *   Params: id - int: The ID number to be part of the JSON object.
+ *   Return - string:  JSON representation of the object.
  */
 string Person::toJSON(const int id) {
     string json = "";
