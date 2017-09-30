@@ -95,7 +95,7 @@ string Person::toJSON(const int id) {
     json += "  \"city\": \"" + address->getCity() + "\",\n";
     json += "  \"country\": \"" + address->getCountry() + "\",\n";
     json += "  \"phone\": \"" + phoneNumber + "\"\n";
-    json += "}\n";
+    json += "}";
 
     return json;
 }
