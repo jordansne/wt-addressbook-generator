@@ -111,7 +111,7 @@ WContainerWidget *App::generateWidget(Person *person) {
     WText *address = new WText("Address: " + person->getAddress()->getFullAddress(), personContainer);
     address->setStyleClass("address");
 
-    WText *phone = new WText("Phone: " + person->getNumber(), personContainer);
+    WText *phone = new WText("Phone: " + person->getNumber()->getFullNumber(), personContainer);
     phone->setStyleClass("phone");
 
     return personContainer;

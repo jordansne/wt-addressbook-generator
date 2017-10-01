@@ -11,6 +11,7 @@
 #include <vector>
 #include "entity/address.h"
 #include "entity/person.h"
+#include "entity/phone_number.h"
 
 class Generator {
 
@@ -32,8 +33,8 @@ private:
 
     std::string randFirstName();
     std::string randLastName();
-    std::string randNumber();
     Address* randAddress();
+    Number *randNumber();
     int genRand(int min, int max);
 
 };

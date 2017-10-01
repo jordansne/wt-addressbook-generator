@@ -8,16 +8,17 @@
 #include "person.h"
 #include "address.h"
 #include "name.h"
+#include "phone_number.h"
 
 using namespace std;
 
 /**
  * Person constructor.
- *   Params: n - Name:     The Name object for the person.
- *           num - string: The phone number of the person.
- *           a - Address*: Address object of the person.
+ *   Params: n - Name:      The Name object for the person.
+ *           num - Number*: The phone number object of the person.
+ *           a - Address*:  Address object of the person.
  */
-Person::Person(Name *n, string num, Address *a) {
+Person::Person(Name *n, Number *num, Address *a) {
     name = n;
     phoneNumber = num;
     address = a;
@@ -33,9 +34,9 @@ Name *Person::getName() {
 
 /**
  * Get the phone number.
- *   Return - string: The person's phone number.
+ *   Return - Number: The person's phone number.
  */
-string Person::getNumber() {
+Number *Person::getNumber() {
     return phoneNumber;
 }
 
@@ -77,7 +78,7 @@ string Person::toJSON(const int id) {
     json += "  \"streetaddress\": \"" + address->getStreet() + "\",\n";
     json += "  \"city\": \"" + address->getCity() + "\",\n";
     json += "  \"country\": \"" + address->getCountry() + "\",\n";
-    json += "  \"phone\": \"" + phoneNumber + "\"\n";
+    json += "  \"phone\": \"" + phoneNumber->getFullNumber() + "\"\n";
     json += "}";
 
     return json;

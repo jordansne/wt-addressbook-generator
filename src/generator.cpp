@@ -11,6 +11,7 @@
 #include "entity/address.h"
 #include "entity/name.h"
 #include "entity/person.h"
+#include "entity/phone_number.h"
 
 using namespace std;
 
@@ -93,28 +94,28 @@ string Generator::randLastName() {
  * Returns a random phone number.
  *   Return - string: A phone number in the form '###-###-####'.
  */
-string Generator::randNumber() {
-    string number = "";
+Number *Generator::randNumber() {
+    string segment1, segment2, segment3;
 
     // First 3 numbers
-    number += to_string(genRand(100, 999)) + "-";
+    segment1 = to_string(genRand(100, 999));
 
     // Second 3 numbers
-    number += to_string(genRand(100, 999)) + "-";
+    segment2 = to_string(genRand(100, 999));
 
     // Last 4 numbers
     int lastDigits = genRand(0, 9999);
     if (lastDigits <= 9) {
-        number += "000" + to_string(lastDigits);
+        segment3 = "000" + to_string(lastDigits);
     } else if (lastDigits <= 99) {
-        number += "00" + to_string(lastDigits);
+        segment3 = "00" + to_string(lastDigits);
     } else if (lastDigits <= 999) {
-        number += "0" + to_string(lastDigits);
+        segment3 = "0" + to_string(lastDigits);
     } else {
-        number += to_string(lastDigits);
+        segment3 = to_string(lastDigits);
     }
 
-    return number;
+    return new Number(segment1, segment2, segment3);
 }
 
 /**
