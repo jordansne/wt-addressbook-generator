@@ -105,7 +105,7 @@ WContainerWidget *App::generateWidget(Person *person) {
     WContainerWidget *personContainer = new WContainerWidget();
     personContainer->setStyleClass("person");
 
-    WText *name = new WText("Name: " + person->getName(), personContainer);
+    WText *name = new WText("Name: " + person->getName()->getFullName(), personContainer);
     name->setStyleClass("name");
 
     WText *address = new WText("Address: " + person->getAddress()->getFullAddress(), personContainer);

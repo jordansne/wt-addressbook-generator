@@ -9,23 +9,21 @@
 
 #include <string>
 #include "address.h"
+#include "name.h"
 
 class Person {
 
 public:
-    Person(std::string f, std::string l, std::string n, Address* a);
+    Person(Name *n, std::string num, Address* a);
 
-    std::string getFirstName();
-    std::string getLastName();
-    std::string getName();
+    Name *getName();
     std::string getNumber();
     Address* getAddress();
     std::string toJSONmin(int id);
     std::string toJSON(int id);
 
 private:
-    std::string firstName;
-    std::string lastName;
+    Name *name;
     std::string phoneNumber;
     Address* address;
 

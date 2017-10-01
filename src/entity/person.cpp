@@ -7,45 +7,28 @@
 #include <string>
 #include "person.h"
 #include "address.h"
+#include "name.h"
 
 using namespace std;
 
 /**
  * Person constructor.
- *   Params: f - string:   First name of the Person.
- *           l - string:   Last name of the person.
- *           n - string:   First name of the person.
+ *   Params: n - Name:     The Name object for the person.
+ *           num - string: The phone number of the person.
  *           a - Address*: Address object of the person.
  */
-Person::Person(string f, string l, string n, Address* a) {
-    firstName = f;
-    lastName = l;
-    phoneNumber = n;
+Person::Person(Name *n, string num, Address *a) {
+    name = n;
+    phoneNumber = num;
     address = a;
 }
 
 /**
- * Get the first name.
- *   Return - string: The person's first name.
+ * Get the person's name object.
+ *   Return - Name: The name object.
  */
-string Person::getFirstName() {
-    return firstName;
-}
-
-/**
- * Get the last name.
- *   Return - string: The person's last name.
- */
-string Person::getLastName() {
-    return lastName;
-}
-
-/**
- * Get the full name.
- *   Return - string: The person's first and last name.
- */
-string Person::getName() {
-    return firstName + " " + lastName;
+Name *Person::getName() {
+    return name;
 }
 
 /**
@@ -73,8 +56,8 @@ string Person::toJSONmin(const int id) {
     string json = "";
 
     json += "{ \"id\": \"" + to_string(id) + "\", ";
-    json += "\"firstName\": \"" + firstName + "\", ";
-    json += "\"lastName\": \"" + lastName + "\" }";
+    json += "\"firstName\": \"" + name->getFirstName() + "\", ";
+    json += "\"lastName\": \"" + name->getLastName() + "\" }";
 
     return json;
 }
@@ -89,8 +72,8 @@ string Person::toJSON(const int id) {
 
     json += "{\n";
     json += "  \"id\": \"" + to_string(id) + "\",\n";
-    json += "  \"firstName\": \"" + firstName + "\",\n";
-    json += "  \"lastName\": \"" + lastName + "\",\n";
+    json += "  \"firstName\": \"" + name->getFirstName() + "\",\n";
+    json += "  \"lastName\": \"" + name->getLastName() + "\",\n";
     json += "  \"streetaddress\": \"" + address->getStreet() + "\",\n";
     json += "  \"city\": \"" + address->getCity() + "\",\n";
     json += "  \"country\": \"" + address->getCountry() + "\",\n";

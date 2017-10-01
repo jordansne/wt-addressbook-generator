@@ -9,6 +9,7 @@
 #include <vector>
 #include "generator.h"
 #include "entity/address.h"
+#include "entity/name.h"
 #include "entity/person.h"
 
 using namespace std;
@@ -68,7 +69,7 @@ void Generator::generateNewBook(const int size) {
     // Fill the addressBook with new random persons
     addressBook.reserve(size);
     for (int i = 0; i < size; i++) {
-        addressBook.push_back(new Person(randFirstName(), randLastName(), randNumber(), randAddress()));
+        addressBook.push_back(new Person(new Name(randFirstName(), randLastName()), randNumber(), randAddress()));
     }
 }
 
