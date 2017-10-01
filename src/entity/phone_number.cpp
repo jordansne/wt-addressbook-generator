@@ -4,7 +4,6 @@
  * CS3307A - Assignment #1
  */
 
-#include <string>
 #include "phone_number.h"
 
 using namespace std;

@@ -4,12 +4,8 @@
  * CS3307A - Assignment #1
  */
 
-#include <string>
 #include <vector>
-#include <Wt/Http/Request>
-#include <Wt/Http/Response>
 #include "people_resource.h"
-#include "generator.h"
 #include "entity/person.h"
 
 using namespace std;
@@ -25,7 +21,7 @@ PeopleResource::PeopleResource(Generator *g) {
 
 /**
  * Handles incoming requests for the '/people' path.
- *   Params: Request - request:   The request object provided by Wt.
+ *   Params: Request  - request:  The request object provided by Wt.
  *           Response - response: The response object provided by Wt.
  */
 void PeopleResource::handleRequest(const Request &request, Response &response) {
@@ -42,7 +38,7 @@ void PeopleResource::handleRequest(const Request &request, Response &response) {
 
 /**
  * Handles a request to retrieve an individual person's data.
- *   Params: string - person:     The provided ID of the person being requested. May be invalid.
+ *   Params: string  - person:    The provided ID of the person being requested. May be invalid.
  *           Response - response: The response object provided by Wt.
  */
 void PeopleResource::handlePerson(string person, Response &response) {

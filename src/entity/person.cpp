@@ -4,19 +4,15 @@
  * CS3307A - Assignment #1
  */
 
-#include <string>
 #include "person.h"
-#include "address.h"
-#include "name.h"
-#include "phone_number.h"
 
 using namespace std;
 
 /**
  * Person constructor.
- *   Params: n - Name:      The Name object for the person.
- *           num - Number*: The phone number object of the person.
- *           a - Address*:  Address object of the person.
+ *   Params: n   - Name:     The Name object for the person.
+ *           num - Number*:  The phone number object of the person.
+ *           a   - Address*: Address object of the person.
  */
 Person::Person(Name *n, Number *num, Address *a) {
     name = n;
@@ -44,7 +40,7 @@ Number *Person::getNumber() {
  * Get the address.
  *   Return - string: The person's first name.
  */
-Address* Person::getAddress() {
+Address *Person::getAddress() {
     return address;
 }
 

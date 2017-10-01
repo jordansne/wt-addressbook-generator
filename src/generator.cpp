@@ -5,13 +5,8 @@
  */
 
 #include <cstdlib>
-#include <string>
-#include <vector>
 #include "generator.h"
-#include "entity/address.h"
 #include "entity/name.h"
-#include "entity/person.h"
-#include "entity/phone_number.h"
 
 using namespace std;
 
@@ -122,7 +117,7 @@ Number *Generator::randNumber() {
  * Returns a random address.
  *   Return - Address*: A random address object.
  */
-Address* Generator::randAddress() {
+Address *Generator::randAddress() {
     const string streetName = to_string(genRand(1, 999)) + " " + streetNames[genRand(0, OPTIONS - 1)];
     const string city = cityNames[genRand(0, OPTIONS - 1)];
     const string province = provinceNames[genRand(0, 9)];
@@ -134,7 +129,7 @@ Address* Generator::randAddress() {
  * Helper method, returns a random number within a given range (inclusive).
  *   Params: min - int: The minimum value of the number.
  *           max - int: The maximum value of the number.
- *   Return - int:      A random number.
+ *   Return      - int: A random number.
  */
 int Generator::genRand(const int min, const int max) {
     return (rand() % (max - min)) + min;

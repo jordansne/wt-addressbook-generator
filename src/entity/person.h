@@ -18,15 +18,15 @@ public:
     Person(Name *n, Number *num, Address *a);
 
     Name *getName();
-    Address* getAddress();
     Number *getNumber();
+    Address *getAddress();
     std::string toJSONmin(int id);
     std::string toJSON(int id);
 
 private:
     Name *name;
-    Address* address;
     Number *phoneNumber;
+    Address *address;
 
 };
 

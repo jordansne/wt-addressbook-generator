@@ -4,7 +4,6 @@
  * CS3307A - Assignment #1
  */
 
-#include <string>
 #include "address.h"
 
 using namespace std;

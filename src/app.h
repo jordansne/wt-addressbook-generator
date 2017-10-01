@@ -20,10 +20,10 @@
 class App : public Wt::WApplication {
 
 public:
-    App(Generator *g, const Wt::WEnvironment& env);
+    App(Generator *g, const Wt::WEnvironment &env);
 
 private:
-    Generator* generator;
+    Generator *generator;
     Wt::WContainerWidget *leftPane;
     Wt::WContainerWidget *rightPane;
     Wt::WText *title;

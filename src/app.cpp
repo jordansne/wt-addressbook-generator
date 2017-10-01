@@ -5,25 +5,17 @@
  */
 
 #include <string>
-#include <Wt/WApplication>
-#include <Wt/WContainerWidget>
-#include <Wt/WEnvironment>
-#include <Wt/WJavaScript>
-#include <Wt/WLineEdit>
-#include <Wt/WPushButton>
-#include <Wt/WText>
 #include "app.h"
-#include "generator.h"
 
 using namespace std;
 using namespace Wt;
 
 /**
  * App constructor. Initializes the UI.
- *   Params: Generator - g:             The generator object that stores the address book.
+ *   Params: Generator           - g:   The generator object that stores the address book.
  *           const WEnvironment& - env: Environment object to provide to superclass
  */
-App::App(Generator *g, const WEnvironment& env): WApplication(env) {
+App::App(Generator *g, const WEnvironment &env): WApplication(env) {
     generator = g;
 
     // Set page properties

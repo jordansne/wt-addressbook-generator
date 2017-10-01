@@ -33,8 +33,8 @@ private:
 
     std::string randFirstName();
     std::string randLastName();
-    Address* randAddress();
     Number *randNumber();
+    Address *randAddress();
     int genRand(int min, int max);
 
 };
