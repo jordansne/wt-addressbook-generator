@@ -14,7 +14,7 @@
 #include <Wt/WLineEdit>
 #include <Wt/WPushButton>
 #include <Wt/WText>
-#include "person.h"
+#include "entity/person.h"
 #include "generator.h"
 
 class App : public Wt::WApplication {

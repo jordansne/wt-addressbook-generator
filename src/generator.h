@@ -9,8 +9,8 @@
 
 #include <string>
 #include <vector>
-#include "address.h"
-#include "person.h"
+#include "entity/address.h"
+#include "entity/person.h"
 
 class Generator {
 

@@ -8,8 +8,8 @@
 #include <string>
 #include <vector>
 #include "generator.h"
-#include "address.h"
-#include "person.h"
+#include "entity/address.h"
+#include "entity/person.h"
 
 using namespace std;
 

@@ -10,7 +10,7 @@
 #include <Wt/Http/Response>
 #include "people_resource.h"
 #include "generator.h"
-#include "person.h"
+#include "entity/person.h"
 
 using namespace std;
 using namespace Wt::Http;
