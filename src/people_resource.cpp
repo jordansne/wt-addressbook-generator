@@ -48,23 +48,22 @@ void PeopleResource::handleRequest(const Request &request, Response &response) {
 void PeopleResource::handlePerson(string person, Response &response) {
     vector<Person*> book = generator->getCurrentBook();
 
-    try {
-        // Try to parse ID to an integer
+    // Check if all the characters are digits in the input (which also disallows negative numbers)
+    if (person != "" && all_of(person.begin(), person.end(), ::isdigit)) {
+        // Convert to integer
         int personID = stoi(person);
 
         // Check the ID is within the range of the address book
-        if (personID < 0 || personID >= book.size()) {
+        if (personID < book.size()) {
+            response.setMimeType("application/json");
+            response.out() << book.at(personID)->toJSON(personID);
+        } else {
             response.setStatus(404);
             response.out() << "404: Not found" << endl << "ID out of range" << endl;
-            return;
         }
-
-        response.setMimeType("application/json");
-        response.out() << book.at(personID)->toJSON(personID);
-
-    } catch (invalid_argument &e) {
+    } else {
         response.setStatus(400);
-        response.out() << "400: Bad request" << endl << "Could not parse ID";
+        response.out() << "400: Bad request" << endl << "Invalid person ID";
     }
 }
 

@@ -124,20 +124,14 @@ void App::handleButton() {
     // Retrieve the input for the amount box
     string amountText = amountBox->text().narrow();
 
-    try {
-        // Try to parse amount as an integer
+    // Check if all the characters are digits in the input (which also disallows negative numbers)
+    if (amountText != "" && all_of(amountText.begin(), amountText.end(), ::isdigit)) {
+        // Convert to integer
         int amount = stoi(amountText);
-
-        // Check the ID is within the range of the address book
-        if (amount < 0) {
-            amountErrorAlert->exec("\"Please enter a number that is 0 or greater!\"");
-            return;
-        }
 
         generator->generateNewBook(amount);
         loadBook();
-    } catch (invalid_argument &e) {
-        // Display error popup
-        amountErrorAlert->exec("\"Please enter a valid number!\"");
+    } else {
+        amountErrorAlert->exec("\"Please enter a valid number that is 0 or greater!\"");
     }
 }
