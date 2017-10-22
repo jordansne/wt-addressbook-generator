@@ -4,6 +4,20 @@
 
 This project was an assignment for an object oriented design course in third year at university. It uses the [Wt library](https://www.webtoolkit.eu/wt) for a web server to provide a simple web interface available at the root and two REST APIs at `/people` & `/people/#`. Contacts can be generated on the web interface and accessed through the APIs. The server stores contacts in memory until shutdown.
 
+## Demo
+
+#### Web interface
+
+![Web Interface](doc/images/Frontend-scale.png)
+
+#### `/people/` API
+
+![/people/ API](doc/images/API-2-scale.png)
+
+#### `/people/#` API
+
+![/people/# API](doc/images/API-1-scale.png)
+
 ## Building
 
     $ git clone https://github.com/jordansne/wt-addressbook-generator
